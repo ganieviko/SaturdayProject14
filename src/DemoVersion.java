@@ -205,5 +205,6 @@ public class DemoVersion {
 //        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[text()='Address was successfully destroyed.']")));
 //        String alertNotice = driver.findElement(By.xpath("//div[text()='Address was successfully destroyed.']")).getText();
 //        System.out.println(alertNotice);
+        driver.quit();
     }
 }
