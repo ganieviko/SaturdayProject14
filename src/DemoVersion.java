@@ -43,7 +43,7 @@ public class DemoVersion {
 
         //////////////////////////////  Checking Login functionality ////////////////////////////////
 
-        driver.findElement(By.id("session_email")).sendKeys(" ");
+        driver.findElement(By.id("session_email")).sendKeys("  ");
         driver.findElement(By.id("session_password")).sendKeys(" ");
         driver.findElement(By.cssSelector(".btn")).click();
 
