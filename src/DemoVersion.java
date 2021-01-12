@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class DemoVersion {
-    public static void main(String[] args) throws AWTException, InterruptedException {
+    public static void main(String[] args) throws AWTException {
 
         System.setProperty("webdriver.chrome.driver", MyConstants.DRIVER_PATH);
         WebDriver driver = new ChromeDriver();
@@ -55,9 +55,7 @@ public class DemoVersion {
 
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div[class = container] > a")));
         WebElement newAddress = driver.findElement(By.cssSelector("div[class = container] > a"));
-//        WebElement newAddress = driver.findElement(By.xpath("//a[text()='New Address']"));
         newAddress.click();
-
 
         //////////////////////////////  Creating a New  Address////////////////////////////////
 
@@ -66,7 +64,6 @@ public class DemoVersion {
         firstNameInput.sendKeys(firstNameTesting);
 
         WebElement lastNameInputElement = driver.findElement(By.id("address_last_name"));
-        // driver.findElement(By.xpath("//*[contains(@type, 'text')]"));
         lastNameInputElement.sendKeys(lastNameTesting);
 
         WebElement address1InputElement = driver.findElement(By.id("address_street_address"));
@@ -86,13 +83,6 @@ public class DemoVersion {
         for (int i = 0; i < options.size(); i++) {
             options.get(num).click();
         }
-
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#address_state>option")));
-//        List<WebElement> options2 = driver.findElements(By.cssSelector("#address_state>option"));
-//        for (WebElement list: options2) {
-//            list.getText();
-//            System.out.println(list);
-//        }
 
         //////////////////////////////          Zip Code                   ////////////////////////////////
 
@@ -137,7 +127,6 @@ public class DemoVersion {
            firstName = false;
         }
         System.out.println(firstName);
-
 
         boolean lastName = false;
         try {
@@ -187,8 +176,6 @@ public class DemoVersion {
         System.out.println(lastNameChanged);
 
         driver.findElement(By.xpath("//a[text()='Addresses']")).click();
-        driver.findElement(By.xpath("//a[text()='Addresses']")).click();
-
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-confirm='Are you sure?']")));
         driver.findElement(By.xpath("//a[@data-confirm='Are you sure?']")).click();
 
@@ -199,8 +186,6 @@ public class DemoVersion {
         robot.keyPress(KeyEvent.VK_TAB);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
-
-
 
 //        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[text()='Address was successfully destroyed.']")));
 //        String alertNotice = driver.findElement(By.xpath("//div[text()='Address was successfully destroyed.']")).getText();
